@@ -23,10 +23,13 @@ df.loc[df['Symbol'] == 'VOO', 'Sector'] = 'Country'
 
 df.rename(columns={'Symbol': 'symbol', 'Description': 'description', 'Sector': 'sector', 'Cost Basis': 'value', 'UnrealizedP&L': 'profit_loss'}, inplace=True)
 
-total_value = df['value'].sum()
-scaling_factor = 10000 / total_value
-df['value'] = df['value'] * scaling_factor 
-df['profit_loss'] = df['profit_loss'] * scaling_factor
+# if I want to scale money by 10000
+# total_value = df['value'].sum()
+# scaling_factor = 10000 / total_value
+# df['value'] = df['value'] * scaling_factor 
+# df['profit_loss'] = df['profit_loss'] * scaling_factor
+# df['percent_change'] = df['profit_loss'] / df['value'] * 100
+
 df['percent_change'] = df['profit_loss'] / df['value'] * 100
 
 df.to_csv('jesse_stocks_cleaned.csv', index=False)
