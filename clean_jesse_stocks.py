@@ -21,6 +21,10 @@ df.loc[df['Symbol'] == 'VNAM', 'Sector'] = 'Country'
 df.loc[df['Symbol'] == 'VNAM', 'Sector'] = 'Country'
 df.loc[df['Symbol'] == 'VOO', 'Sector'] = 'Country'
 
+df.loc[df['Symbol'] == 'DIS', 'Sector'] = 'Consumer Cyclicals'
+df.loc[df['Symbol'] == 'XLC', 'Sector'] = 'Technology'
+df.loc[df['Symbol'] == 'CMCSA', 'Sector'] = 'Consumer Cyclicals'
+
 df.rename(columns={'Symbol': 'symbol', 'Description': 'description', 'Sector': 'sector', 'Cost Basis': 'value', 'UnrealizedP&L': 'profit_loss'}, inplace=True)
 
 # if I want to scale money by 10000
